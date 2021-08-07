@@ -2,7 +2,7 @@
 A python web client for https://www.w3champions.com/
 
 ## Why?
-Because I do not know how to use JS from my python projects efficiently :)
+Because I do not know how to use JS from my python projects efficiently, hence I ported some JS code from https://github.com/w3champions/website to the Python :)
 My API is fully compatible with w3c websites' one, but not all the services are ported yet.
 
 ## How?
