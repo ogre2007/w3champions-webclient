@@ -6,17 +6,15 @@ from dataclasses import dataclass
 from enum import Enum
 import json
 
-from dataclasses_json import dataclass_json
 
-@dataclass_json
-@dataclass(frozen=True)
+@dataclass
 class PlayerServerInfo:
     battleTag: str
     averagePing: int
     currentPing: int
 
-@dataclass_json
-@dataclass(frozen=True)
+
+@dataclass
 class ServerInfo:
     provider: str
     countryCode: str
@@ -24,11 +22,6 @@ class ServerInfo:
     name: str
     nodeId: int
     playerServerInfos: List[PlayerServerInfo]
-    
-js = '{"provider": "123", "countryCode": "123", "location": "123",  "name": "123",  "nodeId": 123, "playerServerInfos":[{"battleTag": "suka123", "averagePing": 123, "currentPing": "23"}]}'.strip()
-d = json.loads(js)
-print(ServerInfo.from_json(js))
-#print(ServerInfo.schema().loads(js, many=True)[0].battleTag)
 
 class EPick(Enum):
     OVERALL = 0,
@@ -94,7 +87,7 @@ class Player:
     won: bool
    
     
-@dataclass_json
+
 @dataclass
 class RootState:
     darkMode: bool
